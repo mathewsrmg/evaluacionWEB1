@@ -11,7 +11,7 @@
     
     <header>
        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-           <a class="navbar-brand" href="#">PAGINA OPERACIONES</a>
+           <a class="navbar-brand" href="index.php">PAGINA OPERACIONES</a>
            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                aria-expanded="false" aria-label="Toggle navigation"></button>
            <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -41,66 +41,35 @@
         <div class="container">
             <div class="row justify">
                 <div class="colums">
-                    <form class="mt-5" action="index.php" method="POST">
-                        <h4>CALCULADORA</h4>
-                        <h3>con esta pagina podra hacer suma resta multiplicacion y division</h3>
+                    <form class="mt-5" action="index2.php" method="POST">
+                        <h4>BIENVENIDO A SU GIMNACIO</h4>
+                        <h3>BODY-TECH</h3>
+                        <h4>con esta aplicacion podra ver el resultado de indice de masa corporal</h4>
                         <br><br>
                         <div class="row">                                                               
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Numero1" name="numero1">
+                                <input type="text" class="form-control" placeholder="peso1" name="peso1">
                             </div>
+                            <br>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Numero2" name="numero2">
+                                <input type="text" class="form-control" placeholder="altura1" name="altura1">
                             </div>
-                            <div>
-                            <select class="form-control" id="operracion" name="operacion">                  
-                                <option value="1">1-suma</option>
-                                <option value="2">2-resta</option>  
-                                <option value="3">3-multiplicacion</option>
-                                <option value="4">4-division</option>
-                            </select>
-                            </div>
-                        <button type="submit" class="btn btn-primary mt-5" name="botoncalcular">Calcular</button>
-                    </form>
+                            <br>
+                        <button type="submit" class="btn btn-primary mt-5" name="botoncalcular2">Calcular</button>
+                    </form> 
 
-                    <br><br><br>
-
-                    <?php if(isset($_POST["botoncalcular"])){
+                    <?php if(isset($_POST["botoncalcular2"])){
+                        $operacion2=$_POST["operacion2"];
+                        $peso1=$_POST["peso1"];
+                        $altura1=$_POST["altura1"];
+                        $resultado2;
                         
-                        $operacion=$_POST["operacion"];
-                        $numero1=$_POST["numero1"];
-                        $numero2=$_POST["numero2"];
-                        $resultado;
-                        echo("segun la operacion ");
-
-                        echo($operacion);
-
-                        if ($operacion==1){
-                        $resultado=$numero1+$numero2;
-                        echo(" sumar de ".$numero1." + ".$numero2);
-                        echo(" es : ".$resultado);
-                        }
-
-                        if ($operacion==2){
-                        $resultado=$numero1-$numero2;
-                        echo(" restar de ".$numero1." - ".$numero2);
-                        echo(" es : ".$resultado);
-                        }
-
-                        if ($operacion==3){
-                        $resultado=$numero1*$numero2;
-                        echo(" multiplicar de ".$numero1." x ".$numero2);
-                        echo(" es : ".$resultado);
-                        }
-
-                        if ($operacion==4){
-                        $resultado=$numero1/$numero2;
-                        echo(" dividir de ".$numero1." / ".$numero2);
-                        echo(" es : ".$resultado);
-                        }
+                        $resultado2=$peso1/($altura1*$altura1);
+                        echo(" : ".$resultado2);
                     }
                     ?>
-                </div>
+
+                    </div>
             </div>
         </div>
     </main>
