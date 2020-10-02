@@ -65,6 +65,7 @@
                         $resultado2;
                         
                         $resultado2=$peso1/($altura1*$altura1);
+                        echo("el resultado de la operacion es:");
                         echo(" : ".$resultado2);
                     }
                     ?>
